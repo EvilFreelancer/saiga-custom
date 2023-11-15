@@ -53,3 +53,12 @@ pip install -r requirements.txt
 
 Contributions to the saiga-custom project are welcome. If you have suggestions for improvement or have developed
 additional tools or scripts that could benefit the community, please feel free to submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgements
+
+Special thanks to the [Saiga (rulm)](https://github.com/IlyaGusev/rulm) project and all the contributors who have made
+this work possible. For more information about the Saiga project, please visit their GitHub repository.
