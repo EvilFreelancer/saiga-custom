@@ -20,6 +20,10 @@ language model training.
   context size of up to 128k tokens. The notebook provides a detailed and user-friendly guide for training the LoRA
   adapter specifically for the Yarn-Mistral-7b-128k model. It meticulously outlines the necessary steps and parameters
   required to optimize performance and achieve the best possible results with this enhanced model.
+* [rugpt35_13b.ipynb](./rugpt35_13b.ipynb) - This notebook focuses on training
+  the [ruGPT-3.5-13B](https://huggingface.co/ai-forever/ruGPT-3.5-13B) model, a powerful
+  language model specifically tailored for understanding and generating Russian text. It guides users through creating a
+  LoRA layer for model adaptation and subsequently performing a conversion to the GGML format for optimized deployment.
 
 ### Scripts
 
@@ -31,6 +35,8 @@ language model training.
 ## Pretrained models
 
 * [evilfreelancer/saiga_mistral_7b_128k_lora](https://huggingface.co/evilfreelancer/saiga_mistral_7b_128k_lora)
+* [evilfreelancer/ruGPT-3.5-13B-lora](https://huggingface.co/evilfreelancer/ruGPT-3.5-13B-lora)
+* [evilfreelancer/ruGPT-3.5-13B-ggml](https://huggingface.co/evilfreelancer/ruGPT-3.5-13B-ggml)
 
 ## Dependencies
 

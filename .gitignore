@@ -1,5 +1,6 @@
 /venv/
 /.idea/
 /Yarn-Mistral-7b-128k/
+/ruGPT-3.5-13B/
 /output/
 /*.jsonl

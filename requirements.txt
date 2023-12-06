@@ -20,3 +20,4 @@ scikit-learn==1.3.0
 pytest
 wheel
 flash-attn>=2.3.3
+llm-rs==0.2.15
