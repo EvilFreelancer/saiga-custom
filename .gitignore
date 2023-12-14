@@ -4,3 +4,7 @@
 /ruGPT-3.5-13B/
 /output/
 /*.jsonl
+/llama.cpp/
+/rulm/
+/yarn_mistral_7b_128k_yakovlev/
+__pycache__
