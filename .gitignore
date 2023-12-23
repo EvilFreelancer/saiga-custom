@@ -6,6 +6,7 @@
 /rugpt-3.5-13b*/
 /yarn_mistral_7b_128k*/
 /llama2_7b*/
+/pavelgpt_7b_128k*/
 /output/
 /*.jsonl
 /llama.cpp/

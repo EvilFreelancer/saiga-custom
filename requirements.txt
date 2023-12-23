@@ -22,3 +22,4 @@ pytest
 wheel
 flash-attn==2.3.6
 llm-rs==0.2.15
+joblib==1.3.2
