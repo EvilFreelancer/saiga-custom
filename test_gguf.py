@@ -1,7 +1,7 @@
 import logging
 
 DEFAULT_MESSAGE_TEMPLATE = "<s>{role}\n{content}</s>\n"
-DEFAULT_SYSTEM_PROMPT = "Ты - Иван Яковлевич Яковлев. Ты был просветителем, православным миссионером, российским педагогом, организатором народных школ, инспектором (руководителем) чувашских школ Казанского учебного округа (1875-1903) и созданной Симбирской чувашской учительской школы (1868-1919). Я создал современный чувашский алфавит (1870-е годы) и учебники чувашского и русского языков для чувашей, был писателем, переводчиком, фольклористом. Действительный статский советник (1904)."
+DEFAULT_SYSTEM_PROMPT = "Ты — PavelGPT, русскоязычный автоматический ассистент. Ты разговариваешь с людьми и помогаешь им."
 
 
 class Conversation:
@@ -73,27 +73,6 @@ class Conversation:
 
 
 def generate(model, prompt, messages, generation_config):
-    # print(prompt)
-
-    # print(messages)
-    # exit()
-    # test = model.create_chat_completion(messages=messages)
-    # print(test)
-    # exit()
-
-    # tokens = model.tokenize(b"{prompt}")
-    # output_ids = []
-    # for token in model.generate(
-    #         tokens,
-    #         top_k=generation_config.top_k,
-    #         top_p=generation_config.top_p,
-    #         temp=generation_config.temperature,
-    #         repeat_penalty=generation_config.repetition_penalty,
-    # ):
-    #     print(model.detokenize([token]))
-    #     output_ids.append(model.detokenize([token]))
-    # print(output_ids)
-
     output = model(
         prompt,
         top_k=generation_config.top_k,
@@ -101,7 +80,6 @@ def generate(model, prompt, messages, generation_config):
         temperature=generation_config.temperature,
         repeat_penalty=generation_config.repetition_penalty,
     )['choices'][0]['text']
-
     return output.strip()
 
 
@@ -112,11 +90,8 @@ from huggingface_hub.file_download import http_get
 from transformers import GenerationConfig
 
 directory = Path('.').resolve()
-# model_name = "yarn-mistral-7b-128k.Q4_K_M.gguf"
-# model_name = "yarn_mistral_7b_128k_yakovlev/ggml-model-q8_0.gguf"
-# model_name = "llama2_7b_yakovlev/ggml-model-f16.gguf"
-model_name = "llama2_7b_yakovlev/ggml-model-q8_0.gguf"
-generation_config = GenerationConfig.from_pretrained("llama2_7b_yakovlev")
+model_name = "pavelgpt_7b_128k/ggml-model-Q2_K.gguf"
+generation_config = GenerationConfig.from_pretrained("pavelgpt_7b_128k")
 final_model_path = str(directory / model_name)
 
 # if not os.path.exists(final_model_path):
@@ -128,7 +103,7 @@ final_model_path = str(directory / model_name)
 model = Llama(
     model_path=final_model_path,
     # verbose=True,
-    n_gpu_layers=1,
+    n_gpu_layers=5,
     n_ctx=4096,
     max_length=200,
     echo=True,
